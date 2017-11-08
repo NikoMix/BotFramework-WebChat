@@ -24,7 +24,8 @@ export interface ChatProps {
     selectedActivity?: BehaviorSubject<ActivityOrID>,
     sendTyping?: boolean,
     formatOptions?: FormatOptions,
-    resize?: 'none' | 'window' | 'detect'
+    resize?: 'none' | 'window' | 'detect',
+    welcomeMessage?: ''
 }
 
 import { History } from './History';
@@ -198,6 +199,22 @@ export class Chat extends React.Component<ChatProps, {}> {
                     tabIndex={ 0 }
                 >
                     { header }
+                    <div className="row " id="welcome-notes" >
+                        <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12    msg-animate-welcome-msg">
+                            <div className="welcome-grid">
+                                <img id="welcome-bot-icon" ng-src="./images/default.png" src="./images/default.png" className="two-tone-11" />
+                            </div>
+
+                            <div className="welcome-msg-bubble welcome-msg-bubble-color">
+                            </div>
+                            <div className="botBackgroundColor welcome-grid  welcome-message-color" id="welcome-message">Hi! I'm Advisory Forum Bot. Say "hi" if you'd like to chat.</div>
+                            <div className="welcome-grid message-panel-timestamp">
+                                <span id="botId">Advisory Forum Bot</span>
+                            </div>
+
+
+                        </div>
+                    </div>
                     <MessagePane>
                         <History />
                     </MessagePane>

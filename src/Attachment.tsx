@@ -307,7 +307,6 @@ export const AttachmentView = (props: {
                 </AdaptiveCardContainer>
             );
 
-        case "image/svg+xml":
         case "image/png":
         case "image/jpg":
         case "image/jpeg":
